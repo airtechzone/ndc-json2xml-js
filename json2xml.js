@@ -7,6 +7,10 @@ var xml = '';
 var sequences = {};
 var debug = false; // display debug messages for sequences
 
+if (process.argv.length != 4) {
+	printUsage();
+	return -1;
+}
 var args = process.argv.slice(2);
 
 // read sequences file
