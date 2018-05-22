@@ -12,7 +12,7 @@ var args = process.argv.slice(2);
 // read sequences file
 fs.readFile('./sequences/sequences-172.json', 'utf8', function (err, data) {
 	if (err) {
-		console.log('Error reading sequences.json\n' + err);
+		console.error('Error reading sequences.json\n' + err);
 	}	else {
 		sequences = JSON.parse(data);
 	}
@@ -35,7 +35,7 @@ fs.readFile(args[0], 'utf8', function (err, data) {
 	parse(json[key], key, '');
 	fs.writeFile(args[1], xml, function(err) {
 		if (err) {
-			console.log('Error writing to output file\n' + err);
+			console.error('Error writing to output file\n' + err);
 			return -1;
 		}
 	});
