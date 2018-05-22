@@ -13,6 +13,7 @@ var args = process.argv.slice(2);
 fs.readFile('./sequences/sequences-172.json', 'utf8', function (err, data) {
 	if (err) {
 		console.error('Error reading sequences.json\n' + err);
+		return -1;
 	}	else {
 		sequences = JSON.parse(data);
 	}
