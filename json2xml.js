@@ -12,9 +12,8 @@ var args = process.argv.slice(2);
 // read sequences file
 fs.readFile('./sequences/sequences-172.json', 'utf8', function (err, data) {
 	if (err) {
-		console.log('error reading sequences.json');
-	}
-	else {
+		console.log('Error reading sequences.json\n' + err);
+	}	else {
 		sequences = JSON.parse(data);
 	}
 });
@@ -23,20 +22,21 @@ fs.readFile('./sequences/sequences-172.json', 'utf8', function (err, data) {
 fs.readFile(args[0], 'utf8', function (err, data) {
 	if (err) {
 		console.error('Invalid input file');
-		return -1
+		return -1;
 	}
 	try {
 		json = JSON.parse(data);
-	} catch(err) {
-		console.error('Invalid JSON input');
-		return
+	} catch (err) {
+		console.error('Invalid JSON input\n' + err);
+		return -1;
 	}
 	// only one key/value pair in element (root)
 	key = Object.keys(json)[0];
 	parse(json[key], key, '');
 	fs.writeFile(args[1], xml, function(err) {
-		if(err) {
-			return console.log(err + 'error writing to output file');
+		if (err) {
+			console.log('Error writing to output file\n' + err);
+			return -1;
 		}
 	});
 });
