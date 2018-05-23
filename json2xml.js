@@ -74,7 +74,10 @@ function sub_parse(key, el, xpath) {
 	xml += '>';
 	// value
 	if ('_' in el) {
-		xml += el._;
+		xml += el._
+			.replace(/\\n/g, '\n')
+			.replace(/\\t/g, '\t')
+			.replace(/\\"/g, '"');
 	}
 	else { // children
 		xml += '\n';
