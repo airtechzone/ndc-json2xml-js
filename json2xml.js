@@ -78,8 +78,7 @@ function sub_parse(key, el, xpath) {
 			.replace(/\\n/g, '\n')
 			.replace(/\\t/g, '\t')
 			.replace(/\\"/g, '"');
-	}
-	else { // children
+	}	else { // children
 		xml += '\n';
 		var unorderedKeys = Object.keys(el);
 		// SORTING KEYS
