@@ -20,31 +20,36 @@ fs.readFile('./sequences/sequences-172.json', 'utf8', function (err, data) {
 		return -1;
 	}	else {
 		sequences = JSON.parse(data);
+		json2xml();
 	}
 });
 
-// read input (JSON file)
-fs.readFile(args[0], 'utf8', function (err, data) {
-	if (err) {
-		console.error('Invalid input file');
-		return -1;
-	}
-	try {
-		json = JSON.parse(data);
-	} catch (err) {
-		console.error('Invalid JSON input\n' + err);
-		return -1;
-	}
-	// only one key/value pair in element (root)
-	key = Object.keys(json)[0];
-	parse(json[key], key, '');
-	fs.writeFile(args[1], xml, function(err) {
+
+function json2xml() {
+	// read input (JSON file)
+	fs.readFile(args[0], 'utf8', function (err, data) {
 		if (err) {
-			console.error('Error writing to output file\n' + err);
+			console.error('Invalid input file');
 			return -1;
 		}
+		try {
+			json = JSON.parse(data);
+		} catch (err) {
+			console.error('Invalid JSON input\n' + err);
+			return -1;
+		}
+		// only one key/value pair in element (root)
+		key = Object.keys(json)[0];
+		parse(json[key], key, '');
+		fs.writeFile(args[1], xml, function(err) {
+			if (err) {
+				console.error('Error writing to output file\n' + err);
+				return -1;
+			}
+		});
 	});
-});
+	return 0;
+}
 
 
 function parse(obj, key, xpath) {
