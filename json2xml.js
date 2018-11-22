@@ -83,6 +83,8 @@ function sub_parse(key, el, xpath) {
 			.replace(/\\n/g, '\n')
 			.replace(/\\t/g, '\t')
 			.replace(/\\"/g, '"');
+	} else if ((Object.keys(el).length == 1 && '$' in el) || Object.keys(el).length == 0) {
+		// attributes or not, but no value and no children
 	}	else { // children
 		xml += '\n';
 		var unorderedKeys = Object.keys(el);
