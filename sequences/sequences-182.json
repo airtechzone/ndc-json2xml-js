@@ -808,8 +808,8 @@
  "IATA_AirDocIssueRQ/Request/Pax/Remark/": ["DisplayInd", "RemarkText", "Timestamp"],
  "IATA_AirDocIssueRQ/Request/Pax/": ["AgeMeasure", "Birthdate", "CitizenshipCountryCode", "ContactInfo", "FOID", "IdentityDoc", "Individual", "LangUsage", "LoyaltyProgramAccount", "PaxID", "PaxRefID", "ProfileConsentInd", "ProfileID", "PTC", "RedressCase", "Remark", "ResidenceCountryCode"],
  "IATA_AirDocIssueRQ/Request/": ["CreateTicket", "Pax"],
- "IATA_AirDocIssueRQ/": ["AugmentationPoint", "MessageDoc", "Party", "PayloadAttributes", "PointofSale", "Request"]}
-{"IATA_AirDocNotifRQ/AugmentationPoint/": [],
+ "IATA_AirDocIssueRQ/": ["AugmentationPoint", "MessageDoc", "Party", "PayloadAttributes", "PointofSale", "Request"],
+ "IATA_AirDocNotifRQ/AugmentationPoint/": [],
  "IATA_AirDocNotifRQ/DocNotification/Coupon/FlightDetails/Arrival/": ["AircraftScheduledDateTime", "BoardingGateID", "IATALocationCode", "StationName", "TerminalName"],
  "IATA_AirDocNotifRQ/DocNotification/Coupon/FlightDetails/CabinType/": ["CabinTypeCode", "CabinTypeName"],
  "IATA_AirDocNotifRQ/DocNotification/Coupon/FlightDetails/Dep/": ["AircraftScheduledDateTime", "BoardingGateID", "IATALocationCode", "StationName", "TerminalName"],
@@ -6840,8 +6840,8 @@
  "IATA_OrderRetrieveRQ/Request/OrderRetrieveParameters/MarketingMessage/": ["Associations", "Desc"],
  "IATA_OrderRetrieveRQ/Request/OrderRetrieveParameters/": ["MarketingMessage"],
  "IATA_OrderRetrieveRQ/Request/": ["OrderFilterCriteria", "OrderRetrieveParameters"],
- "IATA_OrderRetrieveRQ/": ["AugmentationPoint", "MessageDoc", "Party", "PayloadAttributes", "PointOfSale", "Request"]}
-{"IATA_OrderRulesRQ/AugmentationPoint/": [],
+ "IATA_OrderRetrieveRQ/": ["AugmentationPoint", "MessageDoc", "Party", "PayloadAttributes", "PointOfSale", "Request"],
+ "IATA_OrderRulesRQ/AugmentationPoint/": [],
  "IATA_OrderRulesRQ/MessageDoc/": ["Name", "RefVersionNumber"],
  "IATA_OrderRulesRQ/Party/Participant/Aggregator/ContactInfo/": ["ContactInfoID", "ContactType", "IndividualRef"],
  "IATA_OrderRulesRQ/Party/Participant/Aggregator/": ["AggregatorID", "ContactInfo", "Name"],
